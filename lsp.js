@@ -10,9 +10,14 @@ program
     .parse(process.argv);
 
 
-function lsp(baseDir) {
-    data = helpers.walkDir(baseDir, program.depth, program.all);
-    helpers.prettyPrint(data, 0);
+var lsp = function(baseDir, depth, showHidden) {
+    var data = helpers.walkDir(baseDir, depth, showHidden);
+    var output = helpers.prettyPrint(data, 0);
+    console.log(output);
 }
 
-lsp(process.cwd());
+// List exports
+exports.lsp = lsp;
+
+// Run lsp
+lsp(process.cwd(), program.depth, program.all);

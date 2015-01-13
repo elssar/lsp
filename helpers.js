@@ -37,17 +37,21 @@ var walkDir = function(baseDir, depth, showHidden) {
 
 var prettyPrint = function(data, indent) {
     var a = new Array(indent),
-        padding = a.join(" ");
+        padding = a.join(" "),
+        prettyString = "";
+
     data.forEach(function(datum) {
         if(datum.is_dir) {
-            console.log(padding + datum.name.underline.green);
+            prettyString += (padding + datum.name.underline.green) + '\n';
             if ('contents' in datum) {
-                prettyPrint(datum.contents, indent+3);
+                prettyString += prettyPrint(datum.contents, indent+3);
             }
         } else {
-            console.log(padding + datum.name.blue);
+            prettyString += (padding + datum.name.blue) + '\n';
         }
     });
+
+    return prettyString
 };
 
 // List exports
