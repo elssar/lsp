@@ -4,7 +4,7 @@ var program = require('commander'),
     helpers = require('./helpers.js');
 
 program
-    .version('1.0.0')
+    .version('1.0.1')
     .option('-a, --all', 'Show hidden files')
     .option('-d, --depth <n>', 'Depth <int>. Defaults to 0', parseInt, 0)
     .parse(process.argv);
