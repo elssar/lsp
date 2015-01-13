@@ -8,7 +8,7 @@ var fs = require('fs'),
 program
     .version('0.1.0')
     .option('-a, --all', 'Show hidden files')
-    .option('-d, --depth <n>', 'Depth <int>', parseInt, 0)
+    .option('-d, --depth <n>', 'Depth <int>. Defaults to 0', parseInt, 0)
     .parse(process.argv);
 
 function makeSenseOfStats(name, baseDir, depth) {
