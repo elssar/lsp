@@ -1,5 +1,3 @@
-#!/usr/bin/env node
-
 var helpers = require('./helpers.js');
 
 var testprettyPrint = function(test) {

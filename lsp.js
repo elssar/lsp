@@ -1,5 +1,8 @@
 #!/usr/bin/env node
 
+/* global exports
+*/
+
 var program = require('commander'),
     helpers = require('./helpers.js');
 
@@ -14,7 +17,7 @@ var lsp = function(baseDir, depth, showHidden) {
     var data = helpers.walkDir(baseDir, depth, showHidden);
     var output = helpers.prettyPrint(data, 0);
     console.log(output);
-}
+};
 
 // List exports
 exports.lsp = lsp;

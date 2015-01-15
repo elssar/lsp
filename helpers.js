@@ -1,5 +1,3 @@
-#!/usr/bin/env node
-
 var fs = require('fs'),
     path = require('path'),
     colors = require('colors');
@@ -13,7 +11,7 @@ var makeSenseOfStats = function(name, baseDir, depth) {
         data['name'] = name + '/';
         data['is_dir'] = true;
         if (depth > 0) {
-            data['contents'] = walkDir(full_path, depth -1);
+            data['contents'] = walkDir(full_path, depth - 1);
         }
     } else {
         data['name'] = name;
@@ -28,7 +26,7 @@ var walkDir = function(baseDir, depth, showHidden) {
     names = fs.readdirSync(baseDir).filter(function(name) {
         return (showHidden || (name && (name[0] != '.')));
     });
-    names.forEach(function(name){
+    names.forEach(function(name) {
         dirTree.push(makeSenseOfStats(name, baseDir, depth));
     });
 
@@ -37,21 +35,21 @@ var walkDir = function(baseDir, depth, showHidden) {
 
 var prettyPrint = function(data, indent) {
     var a = new Array(indent),
-        padding = a.join(" "),
-        prettyString = "";
+        padding = a.join(' '),
+        prettyString = '';
 
     data.forEach(function(datum) {
-        if(datum.is_dir) {
+        if (datum.is_dir) {
             prettyString += (padding + datum.name.underline.green) + '\n';
             if ('contents' in datum) {
-                prettyString += prettyPrint(datum.contents, indent+3);
+                prettyString += prettyPrint(datum.contents, indent + 3);
             }
         } else {
             prettyString += (padding + datum.name.blue) + '\n';
         }
     });
 
-    return prettyString
+    return prettyString;
 };
 
 // List exports
