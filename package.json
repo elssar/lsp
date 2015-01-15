@@ -28,6 +28,6 @@
   },
   "preferGlobal": true,
   "bin": {
-    "lsp": "./bin/cli.js"
+    "lsp": "./bin/lsp.js"
   }
 }
