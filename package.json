@@ -29,5 +29,8 @@
   "preferGlobal": true,
   "bin": {
     "lsp": "./bin/lsp.js"
+  },
+  "directories": {
+    "man": "./doc/man"
   }
 }
