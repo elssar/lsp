@@ -5,7 +5,7 @@
   "author": "Akshay Bist <elssar@altrawcode.com>",
   "license": "MIT",
   "homepage": "https://github.com/elssar/lsp",
-  "main": "lsp.js",
+  "main": "main.js",
   "dependencies": {
     "colors": "0.6.x",
     "commander": "2.6.x"
@@ -26,5 +26,8 @@
   "bugs": {
     "url": "https://github.com/elssar/lsp/issues"
   },
-  "preferGlobal": true
+  "preferGlobal": true,
+  "bin": {
+    "lsp": "./bin/cli.js"
+  }
 }

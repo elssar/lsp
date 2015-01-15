@@ -1,7 +1,7 @@
-var helpers = require('./helpers.js');
+var helpers = require('./main.js');
 
 var testprettyPrint = function(test) {
-    var expected = '\u001b[34mtests.js\u001b[39m\n\u001b[34mLICENSE\u001b[39m\n\u001b[34mREADME.md\u001b[39m\n\u001b[34mhelpers.js\u001b[39m\n\u001b[34mlsp.js\u001b[39m\n\u001b[34mpackage.json\u001b[39m\n';
+    var expected = '\u001b[34mtests.js\u001b[39m\n\u001b[34mLICENSE\u001b[39m\n\u001b[34mREADME.md\u001b[39m\n\u001b[34mmain.js\u001b[39m\n\u001b[34mlsp.js\u001b[39m\n\u001b[34mpackage.json\u001b[39m\n';
     var data = [
         {
             'name': 'tests.js',
@@ -15,7 +15,7 @@ var testprettyPrint = function(test) {
             'is_dir': false
         },
         {
-            'name': 'helpers.js',
+            'name': 'main.js',
             'is_dir': false
         },
         {
@@ -28,7 +28,7 @@ var testprettyPrint = function(test) {
         }
     ];
 
-    var output = helpers.prettyPrint(data, 0);
+    var output = main.prettyPrint(data, 0);
 
     test.equal(expected, output);
     test.done()
@@ -40,7 +40,7 @@ var testmakeSenseOfStats = function(test) {
         'is_dir': false,
     };
 
-    var output = helpers.makeSenseOfStats('lsp.js', __dirname, 0);
+    var output = main.makeSenseOfStats('lsp.js', __dirname, 0);
 
     test.equal(JSON.stringify(expected), JSON.stringify(output));
     test.done()
@@ -56,7 +56,7 @@ var testwalkDir = function(test) {
             'is_dir': false
         },
         {
-            'name': 'helpers.js',
+            'name': 'main.js',
             'is_dir': false
         },
         {
@@ -73,7 +73,7 @@ var testwalkDir = function(test) {
         }
     ];
 
-    var output = helpers.walkDir(__dirname, 0, false);
+    var output = main.walkDir(__dirname, 0, false);
 
     test.equal(JSON.stringify(expected), JSON.stringify(output));
     test.done();
