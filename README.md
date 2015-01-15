@@ -34,6 +34,12 @@ Simple implementation of ls in node. The results are displayed in a list format,
 
         lsp -a -d 3
 
-    List the deepest path(s) in the directory tree
+    List the deepest path(s) in the directory tree, excluding hidden files and
+    directories
 
         lsp --list-deepest-paths
+
+    ist the deepest path(s) in the directory tree, including hidden files and
+    directories
+
+        lsp --list-deepest-paths --all

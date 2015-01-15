@@ -12,13 +12,13 @@ program
     .parse(process.argv);
 
 var lsp = function(baseDir, depth, showHidden, fullRecurse) {
-    var data = main.walkDir(baseDir, depth, showHidden),
+    var data = main.walkDir(baseDir, 0, depth, showHidden, fullRecurse),
         output = main.prettyPrint(data, 0, 'name', true);
     console.log(output);
 };
 
 var listDeepestPaths = function(baseDir) {
-    var data = main.getDeepestPaths(baseDir),
+    var data = main.getDeepestPaths(baseDir, program.all),
         output = main.prettyPrint(data.deepestPaths, 0, 'path', false);
 
     output = data.deepestPaths.length + ' path(s) at a depth of ' + data.maxDepth + '\n' + output;
