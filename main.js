@@ -1,11 +1,9 @@
-/* global exports
-*/
-
 var fs = require('fs'),
     path = require('path'),
     colors = require('colors');
 
-var makeSenseOfStats = function(name, baseDir, currentDepth, maxDepth, fullRecurse) {
+var makeSenseOfStats = function(name, baseDir, currentDepth, maxDepth,
+                                fullRecurse) {
     var data = {},
         full_path = path.join(baseDir, name);
 
@@ -17,7 +15,8 @@ var makeSenseOfStats = function(name, baseDir, currentDepth, maxDepth, fullRecur
         data['name'] = name + '/';
         data['isDir'] = true;
         if (fullRecurse || (currentDepth < maxDepth)) {
-            data['contents'] = walkDir(full_path, currentDepth + 1, maxDepth, fullRecurse);
+            data['contents'] = walkDir(full_path, currentDepth + 1, maxDepth,
+                                       fullRecurse);
         }
     } else {
         data['name'] = name;
@@ -27,13 +26,15 @@ var makeSenseOfStats = function(name, baseDir, currentDepth, maxDepth, fullRecur
     return data;
 };
 
-var walkDir = function(baseDir, currentDepth, maxDepth, showHidden, fullRecurse) {
+var walkDir = function(baseDir, currentDepth, maxDepth, showHidden,
+                       fullRecurse) {
     var dirTree = [],
         names = fs.readdirSync(baseDir).filter(function(name) {
             return (showHidden || (name && (name[0] != '.')));
         });
     names.forEach(function(name) {
-        dirTree.push(makeSenseOfStats(name, baseDir, currentDepth, maxDepth, fullRecurse));
+        dirTree.push(makeSenseOfStats(name, baseDir, currentDepth, maxDepth,
+                                      fullRecurse));
     });
 
     return dirTree;
