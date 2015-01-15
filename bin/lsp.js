@@ -16,6 +16,7 @@ program
 var lsp = function(baseDir, depth, showHidden, fullRecurse) {
     var data = main.walkDir(baseDir, 0, depth, showHidden, fullRecurse),
         output = main.prettyPrint(data, 0, 'name', true);
+
     console.log(output);
 };
 
