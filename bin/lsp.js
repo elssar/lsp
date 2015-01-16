@@ -16,7 +16,7 @@ var program = require('commander'),
  * Define command line arguments
  */
 program
-    .version('1.1.0')
+    .version('1.1.1')
     .option('-a, --all', 'Show hidden files')
     .option('-d, --depth <n>', 'Depth <int>. Defaults to 0', parseInt, 0)
     .option('--full',

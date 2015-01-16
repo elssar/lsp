@@ -99,7 +99,7 @@ var walkDir = function(baseDir, currentDepth, maxDepth, showHidden,
  *
  * @exports main/flattenDirTree
  */
-function flattenDirTree(dirTree) {
+var flattenDirTree = function(dirTree) {
     /** Return an empty array is dirTree is undefined */
     if (typeof dirTree === 'undefined') {
         return [];
