@@ -1,6 +1,6 @@
 {
   "name": "lsp",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "A simple implementation of the ls command in node that lists one result per line and allows for recursive listing",
   "author": "Akshay Bist <elssar@altrawcode.com>",
   "license": "MIT",
@@ -31,7 +31,8 @@
     "lsp": "./bin/lsp.js"
   },
   "directories": {
-    "man": "./man"
+    "man": "./man",
+    "doc": "./doc"
   },
   "man": "./man/manpage.1"
 }
