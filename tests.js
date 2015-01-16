@@ -1,4 +1,4 @@
-var helpers = require('./main.js');
+var main = require('./main.js');
 
 var testprettyPrint = function(test) {
     var expected = '\u001b[34mtests.js\u001b[39m\n\u001b[34mLICENSE\u001b[39m\n\u001b[34mREADME.md\u001b[39m\n\u001b[34mmain.js\u001b[39m\n\u001b[34mlsp.js\u001b[39m\n\u001b[34mpackage.json\u001b[39m\n';
